@@ -2,7 +2,6 @@ package fireCode;
 
 import java.util.*;
 
-
 /*
   Write a method that takes in an input String and returns true if all the characters in the String are 
   unique and false if there is even a single repeated character.
@@ -23,20 +22,22 @@ areAllCharactersUnique(null) -> true
 
 public class Task3 {
 
-	static boolean duplicateChar(String word) throws NullPointerException {
+	static boolean duplicateChar(String word) {
 
 		boolean check = false;
 
 		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
 
-		if (word.equals(null)) {
-			check = true;
-			
-			throw new NullPointerException();
-
-		} else if(word.isEmpty()) check = true;
 		
-		else  {
+	// word.equals(null); -> poredi vrednosti stringa
+	// String.isNull(word); -> moze i ovako
+		
+		if (word == null || word.isEmpty()) {
+			check = true;
+
+		}
+
+		else {
 
 			for (char c : word.toCharArray()) {
 
@@ -61,19 +62,13 @@ public class Task3 {
 
 	public static void main(String[] args) {
 
-		try {
 		String s1 = "Not unique";
 		String s2 = "";
 		String s3 = "abcdef";
 		String s4 = "A";
 		String s5 = null;
 
-		System.out.println(Task3.duplicateChar(s2));
-		}
-		catch(NullPointerException npe) {
-			
-			System.out.println("true");
-		}
+		System.out.println(Task3.duplicateChar(s5));
 
 	}
 
