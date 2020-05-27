@@ -62,11 +62,11 @@ public class Task3 {
 
 	public static void main(String[] args) {
 
-		String s1 = "Not unique";
-		String s2 = "";
-		String s3 = "abcdef";
-		String s4 = "A";
-		String s5 = null;
+		String s1 = "Not unique";  //false
+		String s2 = "";				//true
+		String s3 = "abcdef";		//true
+		String s4 = "A";			//true
+		String s5 = null;			//true
 
 		System.out.println(Task3.duplicateChar(s5));
 
